@@ -1,0 +1,37 @@
+
+
+
+<div>
+<input type="date" id="userinput1" name="userinput1" [(ngModel)]=fromdate required />
+    <input type="date" id="userinput2" name="userinput2" [(ngModel)]=todate required />
+    <button (click)="generate_chart()">generate chart</button>
+    
+</div>
+
+
+
+<div>
+    <div>
+        <canvas id="canvas" >{{ chart }}</canvas>
+    </div>
+
+    <div>
+        <canvas id="canvas1" >{{ user_chart}}</canvas>
+    </div>
+
+</div>
+
+<div>
+    <input type="date" id="customdate" name="customdate" [(ngModel)]="custom_date" required>
+    <button (click)="get_predicted_value()">Click me</button>
+    <div>{{predicted_value}}</div>
+</div>
+
+<div>
+    <button (click)="getStats()">get stats</button>
+    <div>
+        {{accuracy}}<br>
+        {{mape}}<br>
+        {{rmse}}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="full-screen-container">
+    <div class="login-container">
+        <h1 class="login-title">Welcome</h1>
+        <form  class="form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" [(ngModel)]="form.email" #email="ngModel" required >
+                <span  class ="error" *ngIf="email.invalid && (email.dirty || email.touched )" class="msg">*Enter email</span>
+                
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" [(ngModel)]="form.password" #password="ngModel" required  >
+                <span class ="error"  *ngIf="password.invalid && (password.dirty || password.touched )" class="msg">*Enter password</span>
+                
+            </div>
+            <button type="submit" class="login-button" (click)="loginUser()">Login</button>
+            {{message}}
+        </form>
+    </div>
+</div>
