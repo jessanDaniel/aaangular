@@ -12,10 +12,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ChartComponent } from './chart/chart.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { AdditionalChartComponent } from './additional-chart/additional-chart.component';
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponent,RegisterComponent,ChartComponent, FileUploadComponent
+    AppComponent,LoginComponent,RegisterComponent,ChartComponent, FileUploadComponent, AdditionalChartComponent
     
   ],
   imports: [

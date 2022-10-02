@@ -28,10 +28,10 @@ isPassfilled:boolean=false;
   }
 
   loginUser() {
-    this.http.post('http://127.0.0.1:5000/api/signin',{'username':this.form.email,'password':this.form.password}).subscribe((response:any)=>{
+    this.http.post('http://127.0.0.1:5000/login',{'email':this.form.email,'password':this.form.password}).subscribe((response:any)=>{
       console.log(response.resp)
       this.message=response.resp
-      if(this.message=='success'){
+      if(this.message=='Login Successful'){
         this.router.navigateByUrl('/fileUpload')
       }
   })

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Chart,registerables } from 'chart.js';
 import { map } from 'rxjs';
 
@@ -28,9 +29,7 @@ export class ChartComponent implements OnInit {
   future_user_date:any
   future_sales:any
 
-  //*custom_date
-  custom_date:any;
-  predicted_value:any;
+ 
 
   
 
@@ -43,7 +42,7 @@ export class ChartComponent implements OnInit {
   
 
 
-  constructor(private http:HttpClient){Chart.register(...registerables)}
+  constructor(private http:HttpClient,private router:Router){Chart.register(...registerables)}
   ngOnInit(): void {
   }
   catcher:any;
@@ -97,11 +96,7 @@ export class ChartComponent implements OnInit {
     })
   }
 
-  get_predicted_value(){
-    this.http.post('http://localhost:5000/custom_value',{'custom_date':this.custom_date}).subscribe((response:any)=>{
-      this.predicted_value=JSON.parse(response.custom_value)
-    });
-  }
+  
 
   //* statistics
   getStats(){
@@ -113,6 +108,10 @@ export class ChartComponent implements OnInit {
 
     
   }) 
+  }
+
+  navigate(){
+    this.router.navigateByUrl('/additional');
   }
 
 

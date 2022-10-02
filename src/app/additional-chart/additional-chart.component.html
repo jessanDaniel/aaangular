@@ -1,0 +1,22 @@
+<input [(ngModel)]="pred_duration" type="text" placeholder="Type required number">
+<select #duration (change)="onSelect(duration.value)">
+  <option [ngValue]="null">Dont</option>
+  <option value="Days">Days</option>
+  <option value="Weeks">Weeks</option>
+  <option value="Months">Months</option>
+</select>
+<button (click)="calc()">getChart</button>
+
+<div>
+    <canvas id="canvas1">{{user_chart}}</canvas>
+</div>
+
+
+
+
+<<div>
+    <input type="date" id="customdate" name="customdate" [(ngModel)]="custom_date" required>
+    <button (click)="get_predicted_value()">Click me</button>
+    <div>{{predicted_value}}</div>
+</div> 
+
