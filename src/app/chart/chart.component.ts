@@ -12,7 +12,14 @@ import { map } from 'rxjs';
 export class ChartComponent implements OnInit {
 
   title = 'fileApp';
-  
+  file:any;
+  filename:any;
+  fileform:any;
+  extension:string=''
+  file_message:string='';
+  message_visibility:boolean=true;
+  //*response message
+  message:string="";
   
   //*user dates
   fromdate:any;
@@ -38,6 +45,9 @@ export class ChartComponent implements OnInit {
   accuracy:any;
   rmse:any;
   mape:any;
+
+  div_fromtodate=true;
+  div_getchart=true;
   
   
 
@@ -45,7 +55,63 @@ export class ChartComponent implements OnInit {
   constructor(private http:HttpClient,private router:Router){Chart.register(...registerables)}
   ngOnInit(): void {
   }
-  catcher:any;
+ 
+  onFileSubmit(event:any){
+    //this.catcher=event;
+    try{
+      this.file=event.target.files[0];
+      console.log(event);
+      if(this.file){
+        this.filename=this.file.name;
+        this.extension=this.filename.split('.')[1]
+        if(this.extension=='csv'){
+          this.fileform=new FormData();
+          this.fileform.append('file',this.file);
+        }else{
+          this.file_message='Kindly choose a valid(csv) file';
+          this.message_visibility=false;
+          setTimeout(()=>{
+            this.message_visibility=true;
+          },1550)
+        }
+      }
+      
+    }
+    catch(error){
+      console.log('upload a file')
+    }
+
+  }
+
+  onUpload(){
+    this.div_fromtodate=false;
+    if(this.file && this.extension=='csv'){
+      let url='http://localhost:5000/file_upload';
+    this.http.post(url,this.fileform).subscribe((response:any)=>{
+      
+      console.log(response.response);
+      this.message=response.response;
+      if(this.message==""){
+        this.div_fromtodate=false;
+      }
+
+      
+    });
+    
+    }else{
+      this.file_message='You failed to select a valid csv file';
+      this.message_visibility=false;
+      setTimeout(()=>{
+        this.message_visibility=true;
+      },1550)
+    }
+  }
+
+  delete(){
+    this.file=null;
+    this.filename=null;
+    this.fileform=null;
+  }
   
   
 
@@ -94,6 +160,7 @@ export class ChartComponent implements OnInit {
         }
       })
     })
+    this.div_getchart=false;
   }
 
   
@@ -114,7 +181,13 @@ export class ChartComponent implements OnInit {
     this.router.navigateByUrl('/additional');
   }
 
+  toggle(){
+    this.div_getchart=true;
+  }
 
+  toggle1(){
+    this.div_getchart=false;
+  }
 
   
 

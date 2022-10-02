@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
     this.router.navigateByUrl('/login')
   }
 
-  register(){
+  signup(){
     this.router.navigateByUrl('/register')
   }
 

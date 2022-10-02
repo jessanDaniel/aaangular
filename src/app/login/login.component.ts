@@ -32,7 +32,7 @@ isPassfilled:boolean=false;
       console.log(response.resp)
       this.message=response.resp
       if(this.message=='Login Successful'){
-        this.router.navigateByUrl('/fileUpload')
+        this.router.navigateByUrl('/chart')
       }
   })
   }

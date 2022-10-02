@@ -1,0 +1,154 @@
+.full-container{
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+   object-fit: cover;
+    background: url('home_page.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+h1{
+    font-weight: bolder;
+    font-size: 40px;
+    color:beige;
+}
+
+.nav{
+    position: relative;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to left,#71c5ee,#025091);
+    width: 100%;
+    height:90px;
+    transition:  background 1s ease-in-out 500ms;
+
+}
+
+.log_reg{
+    position: absolute;
+    right:0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+ 
+
+}
+
+.login,.signup{
+    text-align: center;
+    width:90px;
+    height:45px;
+    background-color: #f3e7ea;
+    padding: 13px;
+    margin-right: 13px;
+    border-radius: 13px;
+    transition: translate 500ms ease-in-out 100ms;
+
+}
+
+.login:hover,.signup:hover{
+    translate: 0 -12px;
+    
+}
+
+.nav:hover{
+    background: #ff1493;
+}
+
+/** card content ******************/
+
+.context
+{   
+    
+    height: 60%;
+    width: 50%;
+    margin: 200px auto;
+    padding-bottom: 100px;
+    margin-right:150px;
+    margin-top: 100px;
+
+}
+
+.text{
+    color:white;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: auto;
+    margin-left:40px;
+    margin-bottom:20px;
+    
+}
+
+.card{
+    width:400px;
+    height:550px;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .25s ease;
+    backface-visibility: hidden;
+    border-radius: 2em;
+}
+
+.card:hover{
+    transform: scale(.9);
+}
+
+.card:hover:after{
+    height:380px;
+}
+
+.card:hover .con-text p{
+    margin-bottom: 0px;
+    opacity:1
+}
+
+.card:hover img{
+    transform: scale(1.25);
+    
+}
+
+.card:after{
+    width:100%;
+    content:'';
+    left:0px;
+    bottom:150px;
+    position:absolute;
+    background: linear-gradient(180deg,rgba(0,0,0,0) 0% rgba(0,0,0,1) 100%);
+    z-index:20;
+    transition:all .25s ease;
+}
+
+.card img{
+    height:100%;
+    z-index:10;
+    transition: all .25s ease;
+}
+
+.card .con-text{
+    z-index:30;
+    position: absolute;
+    bottom:0px;
+    color:#FE28A2;
+    padding:20px;
+    padding-bottom: 30px;
+    
+}
+
+.card .con-text p{
+    background-color: white;
+    padding:10px;
+    font-size:20px;
+    font-weight:900;
+    border-radius:1em;
+    box-shadow: 5px 5px 5px #f3e7ea;
+}

@@ -1,42 +1,147 @@
+<div class="full-container">
+    <h1>Please upload your csv file </h1>
+    <div class="file-area">
+        <div class="input">
+            <input class="file-input" type="file" (change)="onFileSubmit($event)" [(ngModel)]="this.file" #filee="ngModel" required>
+        </div>
+        <div [hidden]="filee.invalid" class="buttons">
+            <div [hidden]="filee.invalid" class="upload">
+                <div  (click)="onUpload()">Upload</div>
+            </div>
+            <div [hidden]="filee.invalid" class="clear">  
+                <div  (click)="delete()" >Clear file</div>
+            </div>
+        </div>
+        <p class='csv'[hidden]="message_visibility">{{file_message}}</p>
+    </div>
+</div>
 
 
 
-<div>
-<input type="date" id="userinput1" name="userinput1" [(ngModel)]=fromdate required />
-    <input type="date" id="userinput2" name="userinput2" [(ngModel)]=todate required />
-    <button (click)="generate_chart()">generate chart</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="inst">
+        YOU CAN UPLOAD YOUR FILE HERE
+    </div>
+    <div class="file-container">
+        <div class="file-upload-container">
+            <div>
+                <input type="file" (change)="onFileSubmit($event)" [(ngModel)]="this.file" #filee="ngModel" required>
+            </div>
+            <div class="buttons">
+                <div class="upload">
+                    <button [hidden]='filee.invalid'(click)="onUpload()">Upload</button>
+                </div>
+                <div class="clear">  
+                    <button [hidden]="filee.invalid" (click)="delete()" >Clear file</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        
+    </div>
+    <div class ='chart_stuff' [hidden]="div_fromtodate">
+        <input type="date" id="userinput1" name="userinput1" [(ngModel)]=fromdate required />
+        <input type="date" id="userinput2" name="userinput2" [(ngModel)]=todate required />
+        <button (click)="generate_chart()">generate chart</button>
+        <button (click)="toggle()">Hide</button>
+        <button (click)="toggle1()">Show</button>
+
+    </div>
+
+    <div [hidden]="div_getchart">
+        <div>
+            <canvas id="canvas" >{{ chart }}</canvas>
+        </div>
     
-</div>
+        <div>
+            <canvas id="canvas1" >{{ user_chart}}</canvas>
+        </div>
 
-
-
-<div>
-    <div>
-        <canvas id="canvas" >{{ chart }}</canvas>
+        <div>
+            <button (click)="getStats()">get stats</button>
+            <div>
+                {{accuracy}}<br>
+                {{mape}}<br>
+                {{rmse}}
+            </div>
+            <div>
+                <p>Do you wanna try something new!!!!</p>
+                <button (click)="navigate()">click me!!</button>
+                
+            </div>
+        </div>
+    
     </div>
-
-    <div>
-        <canvas id="canvas1" >{{ user_chart}}</canvas>
-    </div>
-
-</div>
-
-<!-- <div>
-    <input type="date" id="customdate" name="customdate" [(ngModel)]="custom_date" required>
-    <button (click)="get_predicted_value()">Click me</button>
-    <div>{{predicted_value}}</div>
+    
+    
 </div> -->
 
-<div>
-    <button (click)="getStats()">get stats</button>
-    <div>
-        {{accuracy}}<br>
-        {{mape}}<br>
-        {{rmse}}
-    </div>
-</div>
 
-<div>
-    <p>do you wanna try something new!!!!</p>
-    <button (click)="navigate()">click me!!</button>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

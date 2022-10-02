@@ -1,3 +1,54 @@
+
+<div class="full-screen-container">
+  <div class="login-container">
+      <h1 class="login-title">Hello!</h1>
+      <form  class="form">
+          <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="eemail" [(ngModel)]="email" #eemail="ngModel" required >
+              <span  class ="error" *ngIf="eemail.invalid && (eemail.dirty || eemail.touched )" class="msg">*Enter email</span>
+              
+          </div>
+          <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="ppassword" [(ngModel)]="password" #ppassword="ngModel" required  >
+              <span class ="error"  *ngIf="ppassword.invalid && (ppassword.dirty || ppassword.touched )" class="msg">*Enter password</span>
+              
+          </div>
+          <button type="submit" class="login-button" (click)="signup()">Regitser</button>
+          {{message}}
+      </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <form>
     <div class="form-group">
       <p>SignUp</p>
@@ -11,4 +62,4 @@
     
     <button type="submit" class="btn-btn-primary" (click)="signup()">Submit</button>
     {{message}}
-  </form> 
+  </form>  -->

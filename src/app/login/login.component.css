@@ -19,7 +19,7 @@ span{
 }
 .full-screen-container{
 
-    
+    background-image: url('stocks.webp');
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -30,7 +30,7 @@ span{
 
 .login-container{
     --color:hsl(200,100%,6%, .7);
-    background-color: hsl(200,100%,6%, .7);
+    background-color: hsl(200,100%,6%, .89);
     box-shadow: 0 0 15px 0 hsl(200,100%,6%, .7);
     padding: 40px 30px;
     width: 80%;

@@ -1,0 +1,94 @@
+.full-container{
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+   object-fit: cover;
+    background: url('file_upload.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+h1{
+    font-weight: bolder;
+    font-size: 40px;
+    color:beige;
+    text-align: center;
+}
+
+.file-area{
+    position: relative;
+    width:20%;
+    height:40%;
+    margin: 20px auto;
+    background: rgba( 65, 90, 155, 0.45 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+.file-input{
+    border:5px dashed #330d40;
+    border-radius:1em;
+    padding:2px;
+    font-size: 15px;
+}
+
+.file-input::-webkit-file-upload-button{
+    background:#ff629c66 ;
+    color:white;
+    padding:5px 5px;
+    border: none;
+    border-radius: 1em;
+}
+
+.input{
+    position: absolute;
+    top:11%;
+    left: 7%;
+    padding: 15px;
+
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:38%;
+    left:35%;
+    
+}
+
+.upload,.clear{
+    width:100px;
+    height:60px;
+    text-align: center;
+    padding:20%;
+    color:white;
+    font-weight: 900;
+    
+    border-radius: 20px;
+    background: #ff958a;
+    box-shadow: inset 5px 5px 11px #b36861,
+                inset -5px -5px 11px #ffc2b3;
+}
+
+.upload{
+    margin-bottom:30px;
+}
+
+.csv{
+    position: absolute;
+    bottom:.5cm;
+    left:2cm;
+    color:red;
+font-weight: 900;
+}
