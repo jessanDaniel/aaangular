@@ -1,6 +1,79 @@
-<input [(ngModel)]="pred_duration" type="text" placeholder="Type required number">
+<div class="full-container">
+  <div class="main-bar">
+    <div class="icon"></div>
+    You can perform additional prediction operations here
+  </div>
+
+  <div class="add-op-1">
+    <input class="add-op-1-items" [(ngModel)]="pred_duration" type="text" placeholder="Type required number">
+    <select class="add-op-1-items" id='select'#duration (change)="onSelect(duration.value)">
+      <option [ngValue]="null">Select</option>
+      <option value="Days">Days</option>
+      <option value="Weeks">Weeks</option>
+      <option value="Months">Months</option>
+    </select>
+    <button id="getchart" class="add-op-1-items" (click)="calculate()">getChart</button> 
+  </div>
+  <div [hidden]="false">
+    <div class="chart">
+      <div>
+        <canvas id="canvas1">{{user_chart}}</canvas>
+      </div>
+    </div>
+    <p class="text">You can also enter a particular date in the future and get its sales value</p>
+    <div class="custom-date">
+      <input class="custom-date-items" type="date" id="customdate" name="customdate" [(ngModel)]="custom_date" required>
+      <button class="custom-date-items" (click)="get_predicted_value()">Click me</button>
+    </div>
+    <div class="value">{{predicted_value}}</div>
+    <div (click)="goback()" class="custom-date-items" style="margin: 20px auto; font-weight: bolder;
+    font-size: medium;color:white; padding-top: 10px; text-align: center;"> Go Back</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <input [(ngModel)]="pred_duration" type="text" placeholder="Type required number">
 <select #duration (change)="onSelect(duration.value)">
-  <option [ngValue]="null">Dont</option>
+  <option [ngValue]="null">Select</option>
   <option value="Days">Days</option>
   <option value="Weeks">Weeks</option>
   <option value="Months">Months</option>
@@ -14,9 +87,9 @@
 
 
 
-<<div>
+<div>
     <input type="date" id="customdate" name="customdate" [(ngModel)]="custom_date" required>
     <button (click)="get_predicted_value()">Click me</button>
     <div>{{predicted_value}}</div>
-</div> 
+</div>  -->
 

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Chart, registerables } from 'chart.js';
 
 @Component({
@@ -25,7 +26,7 @@ export class AdditionalChartComponent implements OnInit {
   days=0
 
 
-  constructor(private http:HttpClient) {Chart.register(...registerables) }
+  constructor(private http:HttpClient ,private router:Router) {Chart.register(...registerables) }
 
   ngOnInit(): void {
   }
@@ -38,7 +39,7 @@ export class AdditionalChartComponent implements OnInit {
     return /[a-zA-Z]/.test(str);
   }
 
-  calc(){
+  calculate(){
     if(this.select_value=='' || this.select_value=='Dont'){
       alert("select duration")
     }else if(this.pred_duration=='' || this.containsAnyLetters(this.pred_duration)==true){
@@ -72,12 +73,17 @@ export class AdditionalChartComponent implements OnInit {
           labels:this.future_user_date,
           datasets:[
             {
+              tension:0.4,
               label:'User Prediction',
               data:this.future_sales,
-              borderColor:'#ffcc00',
-              fill:false
+              borderColor:'#ffffff',
+              fill:false,
+              pointBackgroundColor:'#ff83cd'
             }
           ]
+        },
+        options:{
+          responsive:true
         }
       })
       })
@@ -87,7 +93,12 @@ export class AdditionalChartComponent implements OnInit {
 
   get_predicted_value(){
     this.http.post('http://localhost:5000/custom_value',{'custom_date':this.custom_date}).subscribe((response:any)=>{
-      this.predicted_value=JSON.parse(response.custom_value)
+      this.predicted_value=JSON.parse(response.custom_value);
+     
     });
+  }
+
+  goback(){
+    this.router.navigateByUrl('/chart')
   }
 }

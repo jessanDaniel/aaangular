@@ -1,0 +1,122 @@
+.full-container{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    overflow-y:scroll ;
+    top:0;
+    object-fit: cover;
+    background: #171120;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-bottom:200px;
+}
+
+.main-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50em ;
+    height: 3.5em;
+    padding: 30px;
+    margin:2em auto ;
+    background-color: #ff83cd;
+    box-shadow:3px 3px 3px #ff83a0;
+    border-radius:1em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    vertical-align: center;
+
+}
+
+.icon{
+    width: 30px;
+    height:30px;
+    background-image: url('prediction.png');
+    background-size: cover;
+    margin-left: -70px;
+    margin-right: 20px;
+}
+
+.add-op-1{
+    background-color: #00000000;
+    width: auto;
+    height:auto;
+    position: relative;
+    top:-50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-op-1-items{
+    width:250px;
+    height:60px;
+    padding:20px;
+    background-color: #fff;
+    margin:40px;
+    border-radius: 1em;
+    box-shadow:2px 2px 2px #ff83cd;
+    
+}
+
+#select,#getchart{
+    color:black;
+    font-weight: bolder;
+    font-size: 19px;
+}
+
+.chart{
+    width: 50em;
+    height: 30em;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #88bae9;
+    box-shadow: 3px 3px 3px #eee;
+    border-radius:16px;
+
+}
+
+.text{
+    color: white;
+    font-weight: bolder;
+    font-size: 2em ;
+    width:1200px;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom:10px;
+    border:none;
+    border-bottom: solid 3px white;
+    margin:0 auto;
+    margin-bottom: 40px;
+}
+
+.custom-date{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.custom-date-items{
+    margin:0 20px;
+    width:150px ;
+    height: 40px;
+    background-color: #ff83cd;
+    border-radius: 16px;
+    padding: 0 15px;
+    color: white;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.value{
+    margin:20px auto;
+    width:250px ;
+    height: 100px;
+    background-color: #ff83cd;
+    border-radius: 16px;
+    padding: 20px 15px;
+    color: white;
+    font-weight: bolder;
+    font-size: medium;
+}

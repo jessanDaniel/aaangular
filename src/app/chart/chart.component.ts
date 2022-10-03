@@ -50,6 +50,7 @@ export class ChartComponent implements OnInit {
   div_getchart=true;
   
   
+  
 
 
   constructor(private http:HttpClient,private router:Router){Chart.register(...registerables)}
@@ -133,14 +134,16 @@ export class ChartComponent implements OnInit {
             {
               label:'Actual Sales',
               data:this.actual_sales,
-              borderColor:'#3cba9f',
-              fill:false
+              borderColor:'#000000',
+              fill:false,
+              pointBackgroundColor:'#00ffff'
             },
             {
               label:'Predicted Sales',
               data:this.predicted_sales,
-              borderColor:'#ffcc00',
-              fill:false
+              borderColor:'#ff0000',
+              fill:false,
+              pointBackgroundColor:'#ff00ff'
             }
           ]
         }
@@ -153,7 +156,7 @@ export class ChartComponent implements OnInit {
             {
               label:'User Prediction',
               data:this.future_sales,
-              borderColor:'#ffcc00',
+              borderColor:'#9a6aff',
               fill:false
             }
           ]
@@ -170,6 +173,7 @@ export class ChartComponent implements OnInit {
   this.http.get('http://localhost:5000/accuracy_and_error').subscribe((response:any)=>{
     
       this.rmse=response.rmse;
+      this.rmse=this.rmse
       this.accuracy=response.accuracy;
       this.mape=response.MAPE ;
 
@@ -181,14 +185,7 @@ export class ChartComponent implements OnInit {
     this.router.navigateByUrl('/additional');
   }
 
-  toggle(){
-    this.div_getchart=true;
-  }
-
-  toggle1(){
-    this.div_getchart=false;
-  }
-
+ 
   
 
 }

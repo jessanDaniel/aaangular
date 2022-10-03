@@ -13,7 +13,61 @@
             </div>
         </div>
         <p class='csv'[hidden]="message_visibility">{{file_message}}</p>
+    </div> 
+    <div [hidden]="div_fromtodate">
+        <div class="user-input" >
+            <input class='user-input-items' type="date" id="userinput1" name="userinput1" [(ngModel)]=fromdate required />
+            <input class='user-input-items' type="date" id="userinput2" name="userinput2" [(ngModel)]=todate required />
+            <div class="user-input-items" (click)="generate_chart()">Get chart</div>
+       
+        </div>
     </div>
+    <div [hidden]="div_getchart">
+        <div class="long-container" >   
+        
+            <div class="chart">
+                <canvas id="canvas" >{{ chart }}</canvas>
+            </div>
+            <div class="stats">
+                <!-- {{accuracy}}<br>
+                    {{mape}}<br>
+                    {{rmse}} -->
+                    <div class="stat">
+                        <p class="metric"></p>
+                        <p class="value"><span class="material-symbols-sharp icon">
+                            percent
+                            </span>Accuracy: {{accuracy}}</p>
+                    </div>
+                    <div class="stat">
+                        <p class="metric"></p>
+                        <p class="value">
+                            <span class="material-symbols-sharp icon">
+                                scoreboard
+                                </span>MAPE:  {{mape}}
+                        </p>
+                    </div>
+                    <div class="stat">
+                        <p class="metric"></p>
+                        <p class="value">
+                            <span class=" icon material-symbols-sharp">
+                                score
+                                </span>RMSE: {{rmse}}
+                        </p>
+                    </div>
+            </div>
+            <div class="chart">
+                <canvas id="canvas1" >{{ user_chart}}</canvas>
+            </div>
+    
+        </div>
+        <div class="chart-btns" >
+            
+            <div class="metrics-btn" (click)="getStats()">Get metrics</div>
+            <div class="metrics-btn" (click)="navigate()">Additional Ops</div>
+        </div>
+    </div>
+    
+    
 </div>
 
 
