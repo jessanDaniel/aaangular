@@ -14,7 +14,7 @@ export class AdditionalChartComponent implements OnInit {
   user_chart:any
   future_user_date:any
   future_sales:any
-
+  type:any;
   
  //*custom_date
   custom_date:any;
@@ -34,15 +34,17 @@ export class AdditionalChartComponent implements OnInit {
   onSelect(value:string){
     this.select_value=value;
   }
+
+
   
-  containsAnyLetters(str:string) {
+  lettersPresent(str:string) {
     return /[a-zA-Z]/.test(str);
   }
 
-  calculate(){
+  getChart(){
     if(this.select_value=='' || this.select_value=='Dont'){
       alert("select duration")
-    }else if(this.pred_duration=='' || this.containsAnyLetters(this.pred_duration)==true){
+    }else if(this.pred_duration=='' || this.lettersPresent(this.pred_duration)==true){
       alert("Type a number")
     }else{
       if(this.select_value=='Months'){
@@ -66,9 +68,11 @@ export class AdditionalChartComponent implements OnInit {
       this.future_sales=JSON.parse(response.future_sales)
       // console.log(this.dates[0],this.actual_sales[0],this.predicted_sales, this.future_user_date[0],this.future_sales[0])
 
-      
-      this.user_chart=new Chart('canvas1',{
-        type:'line',
+      if(this.type==null){
+        alert('Select chart type')
+      }
+      this.user_chart=new Chart('canvas2',{
+        type:this.type,
         data:{
           labels:this.future_user_date,
           datasets:[
@@ -77,6 +81,7 @@ export class AdditionalChartComponent implements OnInit {
               label:'User Prediction',
               data:this.future_sales,
               borderColor:'#ffffff',
+              backgroundColor:'#ff83cd',
               fill:false,
               pointBackgroundColor:'#ff83cd'
             }
@@ -88,6 +93,10 @@ export class AdditionalChartComponent implements OnInit {
       })
       })
     }
+  }
+
+  onTypeSelect(value:string){
+    this.type=value
   }
 
 

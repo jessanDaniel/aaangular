@@ -53,11 +53,13 @@ h1{
 
 .login:hover,.signup:hover{
     translate: 0 -12px;
+    cursor: pointer;
     
 }
 
 .nav:hover{
     background: #ff1493;
+    cursor: pointer;
 }
 
 /** card content ******************/
@@ -86,7 +88,9 @@ h1{
 }
 
 .card{
-    width:400px;
+    position: relative;
+    right:40px;
+    width:500px;
     height:550px;
     background: #000;
     overflow: hidden;
@@ -155,5 +159,8 @@ h1{
 }
 
 .head{
-    
+    width:30%;
+    text-align: center;
+    border-radius: 16px;
 }
+

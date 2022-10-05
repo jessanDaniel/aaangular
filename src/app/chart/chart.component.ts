@@ -146,6 +146,10 @@ export class ChartComponent implements OnInit {
               pointBackgroundColor:'#ff00ff'
             }
           ]
+        },
+        options:{
+          responsive:true,
+          maintainAspectRatio:false
         }
       })
       this.user_chart=new Chart('canvas1',{
@@ -160,6 +164,11 @@ export class ChartComponent implements OnInit {
               fill:false
             }
           ]
+        },
+        options:{
+          responsive:true,
+          maintainAspectRatio:false
+
         }
       })
     })
@@ -172,8 +181,8 @@ export class ChartComponent implements OnInit {
   getStats(){
   this.http.get('http://localhost:5000/accuracy_and_error').subscribe((response:any)=>{
     
+      
       this.rmse=response.rmse;
-      this.rmse=this.rmse
       this.accuracy=response.accuracy;
       this.mape=response.MAPE ;
 

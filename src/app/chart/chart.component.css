@@ -76,7 +76,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding:20%;
     color:white;
     font-weight: 900;
-    
+    cursor: pointer;
     border-radius: 20px;
     background: #ff958a;
     box-shadow: inset 5px 5px 11px #b36861,
@@ -247,3 +247,8 @@ span.icon{
     border-radius: 1em;
 }
 
+#canvas,#canvas1{
+    width:30em;
+    height:29em;
+    
+}

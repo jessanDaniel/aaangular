@@ -52,7 +52,7 @@
 
 .add-op-1-items{
     width:250px;
-    height:60px;
+    height:80px;
     padding:20px;
     background-color: #fff;
     margin:40px;
@@ -61,7 +61,7 @@
     
 }
 
-#select,#getchart{
+#select,#getchart,#typeSelect{
     color:black;
     font-weight: bolder;
     font-size: 19px;
@@ -75,9 +75,11 @@
     background-color: #88bae9;
     box-shadow: 3px 3px 3px #eee;
     border-radius:16px;
-
+    transition: translate 500ms ease-in-out 100ms;
 }
-
+.chart:hover{
+    translate: 0 -20px;
+}
 .text{
     color: white;
     font-weight: bolder;
@@ -110,6 +112,9 @@
 }
 
 .value{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin:20px auto;
     width:250px ;
     height: 100px;
@@ -118,5 +123,5 @@
     padding: 20px 15px;
     color: white;
     font-weight: bolder;
-    font-size: medium;
+    font-size: larger;
 }

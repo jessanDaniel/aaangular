@@ -12,12 +12,20 @@
       <option value="Weeks">Weeks</option>
       <option value="Months">Months</option>
     </select>
-    <button id="getchart" class="add-op-1-items" (click)="calculate()">getChart</button> 
+    <select class="add-op-1-items" id="typeSelect" #type (change)="onTypeSelect(type.value)">
+      <option value="" selected disabled hidden>Select chart type</option>
+      <option value="line">Line</option>
+      <option value="bar">Bar</option>
+      
+     
+    </select>
+    <button id="getchart" class="add-op-1-items" (click)="getChart()">getChart</button> 
+    
   </div>
   <div [hidden]="false">
     <div class="chart">
       <div>
-        <canvas id="canvas1">{{user_chart}}</canvas>
+        <canvas id="canvas2">{{user_chart}}</canvas>
       </div>
     </div>
     <p class="text">You can also enter a particular date in the future and get its sales value</p>
@@ -36,8 +44,12 @@
 
 
 
-
-
+<!-- 
+<select #graph (change)="onSelectgraph(graph.value)">
+  <option value="" selected disabled hidden>Select chart type</option>
+  <option value="line">Line</option>
+  <option value="bar">Bar</option>
+</select> -->
 
 
 

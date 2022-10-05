@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   }
 
   signup(){
-    this.http.post('http://127.0.0.1:5000/create-user',{'email':this.email,'password':this.password}).subscribe((response:any)=>{
+    this.http.post('http://localhost:5000/create-user',{'email':this.email,'password':this.password}).subscribe((response:any)=>{
       this.message=response.resp
       if(this.message=="SignUp Successful"){
         this.router.navigateByUrl('/login');

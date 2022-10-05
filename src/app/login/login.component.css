@@ -13,7 +13,7 @@ app-root{
     margin: 0;
 }
 
-span{
+span, .error{
     color:red !important;
     font-weight: lighter !important;
 }
